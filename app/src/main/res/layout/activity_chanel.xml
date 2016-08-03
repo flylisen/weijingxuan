@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_chanel"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_edit"
+                android:text="@string/edit"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:textSize="14sp"
+                android:background="@drawable/tag_bg"
+                />
+
+        </RelativeLayout>
+        <com.lisen.android.weijingxuan.view.FlowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mMyChanel_Container"
+            android:layout_marginBottom="10dp"
+            >
+
+        </com.lisen.android.weijingxuan.view.FlowLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/all_chanel"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            />
+
+        <com.lisen.android.weijingxuan.view.FlowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mAllChanel_Container"
+            >
+        </com.lisen.android.weijingxuan.view.FlowLayout>
+    </LinearLayout>
+</ScrollView>
