@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_activity_channel"
+        >
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -15,10 +25,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_my_chanel"
                 android:text="@string/my_chanel"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="5dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
                 android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drag_for_sequence"
+                android:textColor="@color/colorGray"
+                android:layout_toEndOf="@id/tv_my_chanel"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -32,14 +54,24 @@
                 />
 
         </RelativeLayout>
-        <com.lisen.android.weijingxuan.view.FlowLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/mMyChanel_Container"
-            android:layout_marginBottom="10dp"
-            >
+            android:padding="10dp"
 
-        </com.lisen.android.weijingxuan.view.FlowLayout>
+            >
+        <com.lisen.android.weijingxuan.view.MyDragGridView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/user_drag_grid_view_channel_activity"
+            android:gravity="center"
+            android:horizontalSpacing="7dp"
+            android:numColumns="4"
+            android:scrollbars="vertical"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="14.0px"
+            />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -48,13 +80,24 @@
             android:layout_marginLeft="5dp"
             android:layout_marginBottom="5dp"
             android:textSize="18sp"
+            android:textColor="@color/colorBlack"
             />
-
-        <com.lisen.android.weijingxuan.view.FlowLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/mAllChanel_Container"
+            android:padding="10dp"
             >
-        </com.lisen.android.weijingxuan.view.FlowLayout>
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/other_grid_view_channel_activity"
+            android:gravity="center"
+            android:horizontalSpacing="7dp"
+            android:numColumns="4"
+            android:scrollbars="vertical"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="14.0px"
+           />
+        </RelativeLayout>
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

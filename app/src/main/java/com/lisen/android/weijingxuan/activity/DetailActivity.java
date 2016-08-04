@@ -26,7 +26,7 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String url = intent.getStringExtra("detail_url");
         Log.d("url", "url= " + url);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_detail);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_channel);
 
         if (toolbar != null) {
             toolbar.setNavigationIcon(R.drawable.back_detail);

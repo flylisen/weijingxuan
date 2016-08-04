@@ -46,6 +46,7 @@ public class MainActivity extends FragmentActivity {
     public final static int CHANEL_REQUEST = 1;
     public final static int CHANEL_RESULT = 3;
     private NewsFragmentAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,6 @@ public class MainActivity extends FragmentActivity {
 
         initView();
     }
-
 
 
     /**
@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ChannelActivity.class);
-              //  mAdapter.setDestroyType(true);
+                //  mAdapter.setDestroyType(true);
                 startActivityForResult(intent, CHANEL_REQUEST);
 
             }
@@ -99,15 +99,17 @@ public class MainActivity extends FragmentActivity {
     private void initFragments() {
         mFragments.clear();
         int count = mUserChanels.size();
+        boolean flag = false;
         for (int i = 0; i < count; i++) {
-           Bundle bundle = new Bundle();
+            Bundle bundle = new Bundle();
             bundle.putString("chanel_id", mUserChanels.get(i).getId());
             bundle.putString("chanel_name", mUserChanels.get(i).getName());
-             NewsFragment newsFragment = new NewsFragment();
+
+            NewsFragment newsFragment = new NewsFragment();
             newsFragment.setArguments(bundle);
             mFragments.add(newsFragment);
 
-            /*TestFragment fragment = new TestFragment();
+           /* TestFragment fragment = new TestFragment();
             fragment.setArguments(bundle);
             mFragments.add(fragment);*/
         }
@@ -176,7 +178,7 @@ public class MainActivity extends FragmentActivity {
             p.rightMargin = 10;
             //L.d("TAG", "p.width=" + p.width);
             final String columName = mUserChanels.get(i).getName();
-           // Log.d("TAG", "colimName=" + columName);
+            // Log.d("TAG", "colimName=" + columName);
             textView.setText(columName);
             textView.setGravity(Gravity.CENTER);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
@@ -192,17 +194,17 @@ public class MainActivity extends FragmentActivity {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   for (int i = 0; i < mRadioGroupContent.getChildCount(); i++) {
-                       TextView localView = (TextView) mRadioGroupContent.getChildAt(i);
-                       if (localView != v) {
-                           localView.setSelected(false);
-                           localView.setTextColor(Color.BLACK);
-                       } else {
-                           localView.setSelected(true);
-                           mViewPager.setCurrentItem(i);
-                           localView.setTextColor(Color.GREEN);
-                       }
-                   }
+                    for (int i = 0; i < mRadioGroupContent.getChildCount(); i++) {
+                        TextView localView = (TextView) mRadioGroupContent.getChildAt(i);
+                        if (localView != v) {
+                            localView.setSelected(false);
+                            localView.setTextColor(Color.BLACK);
+                        } else {
+                            localView.setSelected(true);
+                            mViewPager.setCurrentItem(i);
+                            localView.setTextColor(Color.GREEN);
+                        }
+                    }
                 }
             });
             mRadioGroupContent.addView(textView, i, p);
@@ -230,13 +232,13 @@ public class MainActivity extends FragmentActivity {
         mRadioGroupContent.post(new Runnable() {
             @Override
             public void run() {
-                Log.d("Width","mRadioContent width = " + mRadioGroupContent.getMeasuredWidth());
+                Log.d("Width", "mRadioContent width = " + mRadioGroupContent.getMeasuredWidth());
             }
         });
         mIndicator.post(new Runnable() {
             @Override
             public void run() {
-                Log.d("Width","scroll width = " + mIndicator.getMeasuredWidth());
+                Log.d("Width", "scroll width = " + mIndicator.getMeasuredWidth());
             }
         });
     }
@@ -246,8 +248,8 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
-            if((System.currentTimeMillis()-exitTime) > 2000){
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
                 Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {

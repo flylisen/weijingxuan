@@ -69,17 +69,7 @@ public class NewsFragmentAdapter extends FragmentStatePagerAdapter {
         notifyDataSetChanged();
     }
 
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
 
-
-        /*if (destroyItem) {
-            super.destroyItem(container, position, object);
-            return;
-        }
-        Fragment fragment = fragments.get(position);
-        fm.beginTransaction().hide(fragment).commit();*/
-    }
     private boolean destroyItem = false;
 
     public void setDestroyType(boolean b) {

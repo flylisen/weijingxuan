@@ -21,8 +21,8 @@ public class ChanelManage {
     static {
         defualtUserChanels = new ArrayList<>();
         defualtOhterChanels = new ArrayList<>();
-        defualtUserChanels.add(new ChanelItem("0", "热点"));
-        defualtUserChanels.add(new ChanelItem("1", "推荐"));
+        defualtUserChanels.add(new ChanelItem("0", "热点鲜"));
+        defualtUserChanels.add(new ChanelItem("1", "推荐看"));
         defualtUserChanels.add(new ChanelItem("2", "段子手"));
         defualtUserChanels.add(new ChanelItem("3", "养生堂"));
         defualtUserChanels.add(new ChanelItem("4", "私房话"));

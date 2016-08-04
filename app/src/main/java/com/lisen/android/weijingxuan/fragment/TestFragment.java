@@ -5,15 +5,14 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import com.lisen.android.weijingxuan.R;
+import com.lisen.android.weijingxuan.adapter.DragGridViewAdapter;
+import com.lisen.android.weijingxuan.view.MyDragGridView;
 import com.lisen.android.weijingxuan.view.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -36,21 +35,22 @@ public class TestFragment extends Fragment {
         tag = arg.getString("chanel_name");
         Log.d("fragment" , tag + " " + "onCreate");
         for (int i = 0; i < 12; i++) {
-            mDatas.add(i + "");
+            mDatas.add("item" + i);
         }
         super.onCreate(savedInstanceState);
 
     }
 
     private PullToRefreshListView listView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
+       /* TextView textView = new TextView(getActivity());
         textView.setGravity(Gravity.CENTER);
         textView.setText(tag);
         Log.d("fragment" , tag + " " + "onCreateView");
-        return textView;
+        return textView;*/
        /* View view = inflater.inflate(R.layout.fragment_test_layout, container, false);
         listView = (PullToRefreshListView) view.findViewById(R.id.lv_test_fragment);
         adapter = new ArrayAdapter<>(getActivity(), (android.R.layout.simple_list_item_1), mDatas);
@@ -78,6 +78,11 @@ public class TestFragment extends Fragment {
             }
         });*/
         //return view;
+        View view = inflater.inflate(R.layout.fragment_test_layout, container, false);
+        MyDragGridView dragGridView = (MyDragGridView) view.findViewById(R.id.drag_view_fragment_test);
+       // DragGridViewAdapter adapter = new DragGridViewAdapter(mDatas, getActivity());
+       // dragGridView.setAdapter(adapter);
+        return view;
     }
 
     @Override

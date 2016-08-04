@@ -3,10 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.lisen.android.weijingxuan.view.PullToRefreshListView
+   <!-- <com.lisen.android.weijingxuan.view.PullToRefreshListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lv_test_fragment"
+        />-->
+
+    <com.lisen.android.weijingxuan.view.MyDragGridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/drag_view_fragment_test"
+        android:padding="10dp"
+        android:numColumns="4"
         />
 
 </LinearLayout>
